@@ -34,16 +34,64 @@ button.forEach((btn, i)=>{
 })
 
 const form = document.querySelector('.fm1');
+const fb = document.querySelector('.inp');
+const error1 = document.querySelector('.error1');
+const error = document.querySelector('.error');
+const err = document.querySelector('.icon-arrow');
 
+exp = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 form.addEventListener('submit', (e)=>{
-    e.preventDefault;
-    exp = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+    e.preventDefault();
     const usern = form.username.value;
     if(exp.test(usern)){
-        console.log('Correct');
+        form.username.setAttribute('class', 'emailCR');
+        error1.style.display = 'block';
+        // console.log(usern.classname);
+        setTimeout(() => {
+            form.username.classList.replace('emailCR', 'email');
+            error1.style.display = 'none';
+        }, 3000);
     } else {
-        console.log('Incorrect');
+        err.style= 'display: block';
+        form.username.setAttribute('class', 'emailWR');
+        error.style.display = 'block';
+        // setTimeout(() => {
+        //     form.username.classList.replace('emailWR', 'email');
+        //     error.style.display = 'none';   
+        //     err.style.display = 'none';
+        // }, 3000);
+        // console.log(usern.classname);
 
     }
 })
+
+// form.username.addEventListener('keyup', (e)=>{
+//     if (exp.test(e.target.value)) {
+//         form.username.setAttribute('class', 'emailCR');
+//     } 
+//     else if (!exp.test(e.target.value)) 
+//     {
+//         form.username.setAttribute('class', 'emailWR');
+//     }
+// });
+
+const nav = document.querySelector('.nav');
+const icon = document.querySelectorAll('.fa-solid');
+console.log(icon);
+
+icon.forEach(hamburger => {
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+})
+
+// icon.addEventListener('click', () => {
+//     nav.classList.toggle('active');
+//     console.log('click');
+//     // if(icon.classList.contains("fa-bars")) {
+//     //     icon.classList.replace( "fa-bars", "fa-xmark");
+//     // }else {
+//     //     icon.classList.replace( "fa-xmark", "fa-bars");
+//     // }
+// });
 
