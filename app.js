@@ -50,11 +50,14 @@ form.addEventListener('submit', (e)=>{
         setTimeout(() => {
             form.username.classList.replace('emailCR', 'email');
             error1.style.display = 'none';
-        }, 3000);
+        }, 300000);
     } else {
-        err.style= 'display: block';
-        form.username.setAttribute('class', 'emailWR');
-        error.style.display = 'block';
+        setTimeout(() => {
+            err.style= 'display: block';
+            form.username.setAttribute('class', 'emailWR');
+            error.style.display = 'block';
+        }, 3000);
+        
         // setTimeout(() => {
         //     form.username.classList.replace('emailWR', 'email');
         //     error.style.display = 'none';   
