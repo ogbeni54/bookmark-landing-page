@@ -33,8 +33,8 @@ button.forEach((btn, i)=>{
 })
 })
 
-const form = document.querySelector('.fm1');
-const fb = document.querySelector('.inp');
+const form = document.querySelector('.inp');
+const fb = document.querySelector('.fm1');
 const error1 = document.querySelector('.error1');
 const error = document.querySelector('.error');
 const err = document.querySelector('.icon-arrow');
@@ -43,6 +43,7 @@ exp = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
     const usern = form.username.value;
+    // console.log(usern);
     if(exp.test(usern)){
         form.username.setAttribute('class', 'emailCR');
         error1.style.display = 'block';
@@ -80,7 +81,7 @@ form.addEventListener('submit', (e)=>{
 
 const nav = document.querySelector('.nav');
 const icon = document.querySelectorAll('.fa-solid');
-console.log(icon);
+// console.log(icon);
 
 icon.forEach(hamburger => {
     hamburger.addEventListener('click', () => {
