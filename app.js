@@ -85,9 +85,9 @@ const icon = document.querySelectorAll('.fa-solid');
 
 icon.forEach(hamburger => {
     hamburger.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-})
+        nav.classList.toggle('active'); 
+    //    hamburger.style.display = 'block';
+})});
 
 // icon.addEventListener('click', () => {
 //     nav.classList.toggle('active');

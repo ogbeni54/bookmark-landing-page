@@ -798,6 +798,7 @@ header > .nav > .ul > .list > .laka{
     }
     .icon{
         display: block;
+        user-select: none;
     }
     .icon > .fa-xmark{
         color: white;
@@ -828,10 +829,11 @@ header > .nav > .ul > .list > .laka{
     }
 
     .fa-xmark{
-        font-size: 20px;
+        font-size: 21px;
         position: absolute;
-        top: 8px;
-        right: 10px;
+        top: 10px;
+        right: 15px;
+        /* user-select: none; */
     }
     .nav > .list > .social{
         display: block;
